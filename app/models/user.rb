@@ -35,6 +35,8 @@ class User < ActiveRecord::Base
          :trackable,
          :validatable
 
+  acts_as_token_authenticatable
+
   rolify
 
   has_many :posts

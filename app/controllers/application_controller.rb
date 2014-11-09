@@ -1,9 +1,12 @@
 class ApplicationController < ActionController::Base
+  acts_as_token_authentication_handler_for User
+
   include Pundit
 
   # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
+  # If you don't need to support communication with native mobile or desktop
+  # apps, you may want to use :exception instead.
+  protect_from_forgery with: :null_session
 
   before_action :set_sign_in_redirect
 

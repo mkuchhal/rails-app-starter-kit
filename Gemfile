@@ -54,6 +54,9 @@ gem 'ng-rails-csrf'
 gem 'devise', git: 'https://github.com/plataformatec/devise.git',
     branch: 'lm-rails-4-2'
 
+# For token based authentication using Devise
+gem 'simple_token_authentication'
+
 # For assigning roles to users
 gem 'rolify'
 

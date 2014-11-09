@@ -3,6 +3,13 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  namespace :api do
+    devise_scope :user do
+      post 'sign_in' => 'sessions#create'
+      delete 'sign_out' => 'sessions#destroy'
+    end
+  end
+
   resources :posts
 
   root 'home#index'
